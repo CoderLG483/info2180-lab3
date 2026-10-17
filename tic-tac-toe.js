@@ -50,4 +50,19 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    const newGameBtn = document.querySelector(".btn");
+
+    newGameBtn.addEventListener("click", () => {
+    gameStatus.fill(null);
+    currentPlayer = "X";
+
+    ticBoard.forEach((square) => {
+        square.textContent = "";
+        square.classList.remove("X", "O");
+    });
+
+    const divStatus = document.querySelector("#status");
+    divStatus.textContent = "Move your mouse over a square and click to play an X or an O.";
+    divStatus.classList.remove("you-won");
+});
 });
