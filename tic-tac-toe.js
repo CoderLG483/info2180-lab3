@@ -2,6 +2,12 @@ window.addEventListener('DOMContentLoaded', () => {
     const ticBoard = document.querySelectorAll('#board div');
     let currentPlayer = 'X';
     ticBoard.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.classList.add('hover');
+        });
+        square.addEventListener('mouseout', () => {
+            square.classList.remove('hover');
+        });
         square.classList.add('square');
         square.addEventListener('click', () => {
             square.textContent = currentPlayer;
