@@ -35,7 +35,9 @@ window.addEventListener('DOMContentLoaded', () => {
         });
 
         square.addEventListener('click', () => {
-            // Update the board array at this square's index
+           if (gameStatus[index] !== null || didYouWin()) {
+            return;
+    }
             gameStatus[index] = currentPlayer;
 
             square.textContent = currentPlayer;
